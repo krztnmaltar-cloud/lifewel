@@ -1,0 +1,315 @@
+:root {
+  --blue-900: #0b4f9c;
+  --blue-700: #1f75d8;
+  --blue-500: #4da3ff;
+  --white: #ffffff;
+  --sky: #e8f6ff;
+  --text: #123f73;
+  --border: #b9ddff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    linear-gradient(rgba(232, 246, 255, 0.84), rgba(232, 246, 255, 0.84)),
+    url("./assets/lifewell-bg.png") center / cover fixed no-repeat;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(90deg, #ffffff 0%, #f1f9ff 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #cfe8f7;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.brand p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #4d6c84;
+}
+
+.tagline-photo {
+  margin-top: 0.35rem;
+  width: 170px;
+  max-width: 42vw;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #b9ddff;
+  display: block;
+}
+
+
+.menu-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.55rem 0.8rem;
+  color: var(--white);
+  background: var(--blue-700);
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
+  width: 190px;
+  padding: 0.45rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  box-shadow: 0 8px 26px rgba(4, 41, 75, 0.09);
+}
+
+.nav.open {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.nav button {
+  text-align: left;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  background: #e8f5ff;
+}
+
+main {
+  padding: 1rem;
+}
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.hero {
+  background: linear-gradient(130deg, #4da3ff 0%, #1f75d8 45%, #0b4f9c 100%);
+  color: var(--white);
+}
+
+.hero h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.8rem;
+}
+
+.hero p {
+  margin: 0;
+}
+
+.hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hero button,
+.order-form button,
+.table-head button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--blue-700);
+}
+
+.hero .ghost {
+  color: var(--blue-900);
+  background: var(--white);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.two-col {
+  grid-template-columns: 1fr;
+}
+
+.products-grid {
+  grid-template-columns: 1fr;
+}
+
+.page-title {
+  margin: 0;
+}
+
+.chip {
+  display: inline-block;
+  margin: 0;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--blue-900);
+  background: #cfeaff;
+}
+
+.order-form label,
+.admin-lock label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid #9fcfff;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  background: #ffffff;
+}
+
+.form-grid {
+  grid-template-columns: 1fr;
+  margin-bottom: 1rem;
+}
+
+.success {
+  border-left: 4px solid #0b9f73;
+}
+
+.error {
+  color: #c12020;
+  font-weight: 600;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stat h3 {
+  margin: 0.3rem 0 0;
+  font-size: 1.2rem;
+}
+
+.stat p {
+  margin: 0;
+  color: #48617b;
+}
+
+.table-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.table-wrap {
+  margin-top: 0.7rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.55rem;
+  border-bottom: 1px solid #d5ebff;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  color: var(--white);
+  background: #cc2b2b;
+}
+
+@media (min-width: 860px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    display: flex;
+    width: auto;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    gap: 0.5rem;
+  }
+
+  .nav button {
+    background: transparent;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  main {
+    padding: 1.2rem;
+  }
+
+  .two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

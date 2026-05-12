@@ -33,8 +33,8 @@ const PRODUCTS = [
     category: "Service",
     image: "/product-container.png",
     description: "Clean and safe purified drinking water for daily household use.",
-    priceBase: 25,
-    priceDelivery: 35,
+    priceBase: 15,
+    priceDelivery: 25,
     variants: ["Container Refill"],
     stock: "Available Everyday",
   },
@@ -76,7 +76,11 @@ function toPhp(amount) {
 function createOrder(form) {
   const now = new Date();
   const quantity = Number(form.quantity) || 1;
-  const unitPrice = form.deliveryType === "Delivery" ? 35 : 25;
+  const selectedProduct = PRODUCTS.find((product) => product.name === form.product);
+  const unitPrice =
+    form.deliveryType === "Delivery"
+      ? selectedProduct?.priceDelivery ?? 35
+      : selectedProduct?.priceBase ?? 25;
   const total = unitPrice * quantity;
 
   return {
@@ -108,7 +112,7 @@ function App() {
     customerName: "",
     phone: "",
     address: "",
-    product: "Gallons",
+    product: "Water Container",
     quantity: 1,
     note: "Fragile",
     paymentMethod: "Cash on Delivery",
@@ -175,7 +179,7 @@ function App() {
       customerName: "",
       phone: "",
       address: "",
-      product: "Gallons",
+      product: "Water Container",
       quantity: 1,
       note: "Fragile",
       paymentMethod: "Cash on Delivery",
@@ -459,8 +463,9 @@ function App() {
                       setForm((prev) => ({ ...prev, product: event.target.value }))
                     }
                   >
-                    <option>Gallons</option>
+                    <option>Water Container</option>
                     <option>Water Bottle</option>
+                    <option>Gallon Jar</option>
                   </select>
                 </label>
 

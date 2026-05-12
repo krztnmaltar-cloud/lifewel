@@ -1,11 +1,11 @@
 :root {
-  --blue-900: #0b4f9c;
-  --blue-700: #1f75d8;
-  --blue-500: #4da3ff;
+  --blue-900: #083b7a;
+  --blue-700: #1263c6;
+  --blue-500: #2f93ff;
   --white: #ffffff;
-  --sky: #e8f6ff;
-  --text: #123f73;
-  --border: #b9ddff;
+  --sky: #d9efff;
+  --text: #0f3568;
+  --border: #9ecdf8;
 }
 
 * {
@@ -17,7 +17,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
   background:
-    linear-gradient(rgba(232, 246, 255, 0.84), rgba(232, 246, 255, 0.84)),
+    linear-gradient(rgba(217, 239, 255, 0.78), rgba(8, 59, 122, 0.3)),
     url("./assets/lifewell-bg.png") center / cover fixed no-repeat;
 }
 
@@ -34,7 +34,7 @@ body {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.9rem 1rem;
-  background: linear-gradient(90deg, #ffffff 0%, #f1f9ff 100%);
+  background: linear-gradient(90deg, #f5fbff 0%, #dff1ff 100%);
   border-bottom: 1px solid var(--border);
 }
 
@@ -106,7 +106,7 @@ body {
   border: 0;
   border-radius: 8px;
   padding: 0.55rem 0.7rem;
-  background: #e8f5ff;
+  background: #dff1ff;
 }
 
 main {
@@ -121,14 +121,14 @@ main {
 }
 
 .card {
-  background: linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e8f6ff 100%);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1rem;
 }
 
 .hero {
-  background: linear-gradient(130deg, #4da3ff 0%, #1f75d8 45%, #0b4f9c 100%);
+  background: linear-gradient(130deg, #2f93ff 0%, #1263c6 48%, #083b7a 100%);
   color: var(--white);
 }
 
@@ -191,7 +191,7 @@ button {
   padding: 0.2rem 0.6rem;
   font-size: 0.8rem;
   color: var(--blue-900);
-  background: #cfeaff;
+  background: #d9efff;
 }
 
 .order-form label,
@@ -204,7 +204,7 @@ button {
 input,
 select {
   width: 100%;
-  border: 1px solid #9fcfff;
+  border: 1px solid #78b8f0;
   border-radius: 8px;
   padding: 0.55rem 0.65rem;
   background: #ffffff;
@@ -260,7 +260,7 @@ th,
 td {
   text-align: left;
   padding: 0.55rem;
-  border-bottom: 1px solid #d5ebff;
+  border-bottom: 1px solid #c3e2ff;
   font-size: 0.9rem;
 }
 

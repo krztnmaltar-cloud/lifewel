@@ -28,13 +28,36 @@ const BUSINESS = {
 
 const PRODUCTS = [
   {
-    id: "gallons",
-    name: "Gallons",
+    id: "water-container",
+    name: "Water Container",
     category: "Service",
+    image: "/product-container.png",
     description: "Clean and safe purified drinking water for daily household use.",
     priceBase: 25,
     priceDelivery: 35,
-    variants: ["Water Bottle", "Gallons"],
+    variants: ["Container Refill"],
+    stock: "Available Everyday",
+  },
+  {
+    id: "water-bottle",
+    name: "Water Bottle",
+    category: "Product",
+    image: "/product-bottle.png",
+    description: "Sealed purified drinking water bottle for personal and travel use.",
+    priceBase: 25,
+    priceDelivery: 35,
+    variants: ["500ml", "1L"],
+    stock: "Available Everyday",
+  },
+  {
+    id: "gallon-jar",
+    name: "Gallon Jar",
+    category: "Product",
+    image: "/product-gallon.png",
+    description: "Large gallon jar refill for families and small businesses.",
+    priceBase: 25,
+    priceDelivery: 35,
+    variants: ["5 Gallon"],
     stock: "Available Everyday",
   },
 ];
@@ -354,6 +377,11 @@ function App() {
             <div className="grid products-grid">
               {PRODUCTS.map((product) => (
                 <article key={product.id} className="card product-card">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="product-photo"
+                  />
                   <p className="chip">{product.category}</p>
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>

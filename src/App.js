@@ -407,7 +407,7 @@ function App() {
                         customerName: event.target.value,
                       }))
                     }
-                    placeholder="Arjohn"
+                    placeholder="e.g. Arjohn"
                   />
                 </label>
 
@@ -419,7 +419,7 @@ function App() {
                     onChange={(event) =>
                       setForm((prev) => ({ ...prev, phone: event.target.value }))
                     }
-                    placeholder="09667348747"
+                    placeholder="e.g. 09667348747"
                   />
                 </label>
 
@@ -434,7 +434,7 @@ function App() {
                         address: event.target.value,
                       }))
                     }
-                    placeholder="Barangay Alangan, Sibalom, Antique"
+                    placeholder="e.g. Barangay Alangan, Sibalom, Antique"
                   />
                 </label>
 
@@ -488,7 +488,7 @@ function App() {
                     onChange={(event) =>
                       setForm((prev) => ({ ...prev, note: event.target.value }))
                     }
-                    placeholder="Fragile"
+                    placeholder="e.g. Fragile"
                   />
                 </label>
               </div>

@@ -31,7 +31,7 @@ const PRODUCTS = [
     category: "Service",
     image: "/product-container.png",
     description: "Clean and safe purified drinking water for daily household use.",
-    priceBase: 15,
+    priceBase: 25,
     variants: ["Container Refill"],
     stock: "Available Everyday",
   },

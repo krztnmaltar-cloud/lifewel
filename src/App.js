@@ -22,8 +22,6 @@ const BUSINESS = {
   social: "Life Well Purified Drinking Water",
   hours: "Monday - Sunday, 7:00 AM - 4:30 PM",
   gcash: "09930914199 - Arjohn Lee",
-  deliveryPolicy:
-    "Free delivery within Sibalom for orders above P200. Provincial orders via tricycle and multicab.",
 };
 
 const PRODUCTS = [
@@ -34,7 +32,6 @@ const PRODUCTS = [
     image: "/product-container.png",
     description: "Clean and safe purified drinking water for daily household use.",
     priceBase: 15,
-    priceDelivery: 25,
     variants: ["Container Refill"],
     stock: "Available Everyday",
   },
@@ -44,8 +41,7 @@ const PRODUCTS = [
     category: "Product",
     image: "/product-bottle.png",
     description: "Sealed purified drinking water bottle for personal and travel use.",
-    priceBase: 25,
-    priceDelivery: 35,
+    priceBase: 15,
     variants: ["500ml", "1L"],
     stock: "Available Everyday",
   },
@@ -56,7 +52,6 @@ const PRODUCTS = [
     image: "/product-gallon.png",
     description: "Large gallon jar refill for families and small businesses.",
     priceBase: 25,
-    priceDelivery: 35,
     variants: ["5 Gallon"],
     stock: "Available Everyday",
   },
@@ -77,10 +72,7 @@ function createOrder(form) {
   const now = new Date();
   const quantity = Number(form.quantity) || 1;
   const selectedProduct = PRODUCTS.find((product) => product.name === form.product);
-  const unitPrice =
-    form.deliveryType === "Delivery"
-      ? selectedProduct?.priceDelivery ?? 35
-      : selectedProduct?.priceBase ?? 25;
+  const unitPrice = selectedProduct?.priceBase ?? 25;
   const total = unitPrice * quantity;
 
   return {
@@ -93,7 +85,7 @@ function createOrder(form) {
     quantity,
     note: form.note.trim(),
     paymentMethod: form.paymentMethod,
-    deliveryType: form.deliveryType,
+    deliveryType: "Pickup",
     unitPrice,
     total,
     status: "Pending",
@@ -116,7 +108,6 @@ function App() {
     quantity: 1,
     note: "Fragile",
     paymentMethod: "Cash on Delivery",
-    deliveryType: "Pickup",
   });
 
   useEffect(() => {
@@ -183,7 +174,6 @@ function App() {
       quantity: 1,
       note: "Fragile",
       paymentMethod: "Cash on Delivery",
-      deliveryType: "Pickup",
     });
   }
 
@@ -210,7 +200,7 @@ function App() {
       "Unit Price",
       "Total",
       "Payment",
-      "Delivery",
+      "Order Type",
       "Status",
       "Note",
     ];
@@ -225,7 +215,7 @@ function App() {
       order.unitPrice,
       order.total,
       order.paymentMethod,
-      order.deliveryType,
+      "Pickup",
       order.status,
       order.note,
     ]);
@@ -340,7 +330,7 @@ function App() {
                   <li>Clean and Safe</li>
                   <li>Affordable prices</li>
                   <li>Friendly and trusted service</li>
-                  <li>Reliable local delivery</li>
+                  <li>Reliable refill service</li>
                 </ul>
               </article>
             </div>
@@ -368,9 +358,6 @@ function App() {
               <p>
                 <strong>GCash:</strong> {BUSINESS.gcash}
               </p>
-              <p>
-                <strong>Delivery Policy:</strong> {BUSINESS.deliveryPolicy}
-              </p>
             </article>
           </section>
         )}
@@ -391,10 +378,6 @@ function App() {
                   <p>{product.description}</p>
                   <p>
                     <strong>Pickup:</strong> {toPhp(product.priceBase)} per piece
-                  </p>
-                  <p>
-                    <strong>Delivery:</strong> {toPhp(product.priceDelivery)} per
-                    delivery
                   </p>
                   <p>
                     <strong>Variants:</strong> {product.variants.join(", ")}
@@ -483,22 +466,6 @@ function App() {
                 </label>
 
                 <label>
-                  Delivery Type
-                  <select
-                    value={form.deliveryType}
-                    onChange={(event) =>
-                      setForm((prev) => ({
-                        ...prev,
-                        deliveryType: event.target.value,
-                      }))
-                    }
-                  >
-                    <option>Pickup</option>
-                    <option>Delivery</option>
-                  </select>
-                </label>
-
-                <label>
                   Payment Method
                   <select
                     value={form.paymentMethod}
@@ -542,7 +509,7 @@ function App() {
                 </p>
                 <p>
                   <strong>Summary:</strong> {latestOrder.quantity} x{" "}
-                  {latestOrder.product} ({latestOrder.deliveryType}) ={" "}
+                  {latestOrder.product} (Pickup) ={" "}
                   {toPhp(latestOrder.total)}
                 </p>
               </article>

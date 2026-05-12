@@ -32,7 +32,7 @@ const PRODUCTS = [
     image: "/product-container.png",
     description: "Clean and safe purified drinking water for daily household use.",
     priceBase: 25,
-    variants: ["Container Refill"],
+    variants: ["1"],
     stock: "Available Everyday",
   },
   {
@@ -42,7 +42,7 @@ const PRODUCTS = [
     image: "/product-bottle.png",
     description: "Sealed purified drinking water bottle for personal and travel use.",
     priceBase: 15,
-    variants: ["500ml", "1L"],
+    variants: ["1"],
     stock: "Available Everyday",
   },
   {
@@ -52,7 +52,7 @@ const PRODUCTS = [
     image: "/product-gallon.png",
     description: "Large gallon jar refill for families and small businesses.",
     priceBase: 25,
-    variants: ["5 Gallon"],
+    variants: ["1"],
     stock: "Available Everyday",
   },
 ];

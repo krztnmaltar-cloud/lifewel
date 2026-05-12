@@ -262,6 +262,10 @@ function App() {
               src="/tagline-photo.png"
               alt="Life Well tagline sign"
               className="tagline-photo"
+              onClick={(event) => {
+                event.stopPropagation();
+                goTo("products");
+              }}
             />
           </div>
         </div>

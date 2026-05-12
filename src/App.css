@@ -72,6 +72,7 @@ body {
   border-radius: 8px;
   border: 1px solid #b9ddff;
   display: block;
+  cursor: pointer;
 }
 
 
